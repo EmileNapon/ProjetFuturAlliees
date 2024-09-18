@@ -58,12 +58,12 @@
 
 
 <div style='padding:40px'>
-<div  *ngFor='let domaine of Audits'>
-      <h5 class="card-title">{{domaine.title}}</h5>
+<div  *ngFor='let cour of cours_presentiel'>
+      <h5 class="card-title">{{cour.nom}}</h5>
       <p class="card-text">Niveau : Bac et Plus</p>
       <p class="card-text">Durée :1 mois</p>
       <p class="card-text">Lieu : FIDALLI</p>
-      <button routerLink="/formation/inscrit/" class="btn btn-primary">s'inscrire</button>
+      <button (click)="onSelectDomaine(cour.id)" class="btn btn-primary">s'inscrire</button>
       <br/><br/><br/><br/>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DomaineService } from '../acceuil-formation/acceuil-formation-services/acceuil-formations-services';
 
 @Component({
@@ -9,7 +9,7 @@ import { DomaineService } from '../acceuil-formation/acceuil-formation-services/
 })
 export class CardModuleComponent implements OnInit {
 
-  constructor(private domaineService: DomaineService, private router: ActivatedRoute) { }
+  constructor(private domaineService: DomaineService, private router: ActivatedRoute, private route:Router) { }
 
   domaineId: string | null = null;
   matieres: any[] = [];
@@ -32,5 +32,9 @@ export class CardModuleComponent implements OnInit {
     if (this.domaineId) {
       this.filteredMatieres = this.matieres.filter(matiere => matiere.fk_domaineId === this.domaineId);
     }
+  }
+
+  onSelectDomaine(coursId: string): void {
+    this.route.navigate([`/cours/${coursId}/content`]); // Redirection vers la page des matières du domaine sélectionné
   }
 }

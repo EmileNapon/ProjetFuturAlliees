@@ -67,7 +67,7 @@
                     <h5 class="card-title">{{cour.nom}}</h5>
                     <p class="card-text">Niveau : ★★★</p>
                     <p class="card-text">Durée : 4 heures</p>
-                    <button [routerLink]="['/cours',cour.id]" class="btn btn-primary">Voir les détails</button>
+                    <button (click)="onSelectDomaine(cour.id)" class="btn btn-primary">Voir les détails</button>
                   </div>
                 </div>
               </div>

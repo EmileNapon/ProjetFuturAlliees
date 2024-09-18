@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DomaineService } from '../acceuil-formation/acceuil-formation-services/acceuil-formations-services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription-formation-presentielle',
@@ -7,9 +9,23 @@ import { Component } from '@angular/core';
 })
 export class InscriptionFormationPresentielleComponent {
 
-  Audits=[{"id":1,"title":"Introduction à l'Intelligence Artificielle"},
-  {"id":2, 'title':"Développement Web Full Stack"},
-  {"id":3, "title":"Gestion de Projet"}];
+  cours_presentiel: any[] = [];
+
+  constructor(private domaineService: DomaineService, private router: Router) { }
+  
+  ngOnInit(): void {
+    this.loadDomaines();
+  }
+  
+  loadDomaines(): void {
+    this.domaineService.getCours_presentiel().subscribe(data => {
+      this.cours_presentiel = data;
+    });
+  }
+  
+  onSelectDomaine(idcoursPresentiel: string): void {
+    this.router.navigate([`/FormationPresentielle/${idcoursPresentiel}/coursPresentiel`]); // Redirection vers la page des matières du domaine sélectionné
+  };
 
 
 }

@@ -23,6 +23,7 @@ import { CardModuleComponent } from './module-formation-certification/domaines-l
 import { CardModuleComponent2 } from './module-formation-certification/domaines-listes2/domaines2.component';
 import { SuivieCoursComponent } from './module-formation-certification/contenu-cours/suivie_cours.component';
 import { InscriptionComponent } from './module-formation-certification/inscription_cours/inscription.component';
+import { CoursComponent } from './module-formation-certification/cours/cours.component';
 
 
 const routes: Routes = [
@@ -45,12 +46,17 @@ const routes: Routes = [
   
   {path:'module2', component:CardModuleComponent2},
   {path:'cours', component:SuivieCoursComponent},
-  {path:'inscrit', component:InscriptionComponent},] 
+  ] 
   },
 
 
   {path:'domaines', component:AcceuilFormationComponent},
   {path:'domaines/:domaineId/cours', component:CardModuleComponent},
+  {path:'cours/:coursId/content', component:CoursComponent},
+
+
+  {path:'FormationPresentiel', component:InscriptionFormationPresentielleComponent},
+  {path:'FormationPresentiel/:idcoursPresentiel/coursPresentielForms', component:InscriptionComponent},
 
   {path:'usersPages',component:GestionUtilisateursComponent,children:[
     {path:'register', component:RegistrationComponent},
