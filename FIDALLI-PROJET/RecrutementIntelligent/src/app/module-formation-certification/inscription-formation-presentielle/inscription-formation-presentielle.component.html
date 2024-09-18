@@ -1,0 +1,89 @@
+
+<body>
+<nav class="navbar-light navbar-fixed-top bg-light  py-4">
+
+  <ul class="nav">
+      <li class="nav-item">
+          <img src="assets/icon.png" alt="FuturAlliés Logo" routerLink='/acceuil' class="logo" height="50">
+       </li>
+    <li class="nav-item">
+      <a routerLink='/formation/acceuilFormation' class="nav-link" >Domaine</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink='formation/FormationPresentielle' class="nav-link" >Formation en presentiel</a>
+    </li>
+
+
+    <li class="nav-item">
+      <a routerLink='/formation/certification' class="nav-link" >Certifications</a>
+    </li>
+
+
+    <li class="nav-item">
+      <a href="#trainers" class="nav-link" >A propos de nos centres</a>
+    </li>
+ 
+
+    <li class="nav-item">
+      <a href="#trainers" class="nav-link" >Equipes</a>
+    </li>
+
+    <li class="nav-item" style="padding-left: 30px;">
+      <a routerLink="/usersPages/login" class="btn btn-warning" >Se connecter</a>
+    </li>
+  </ul>
+</nav>
+
+
+
+<section class="banner bg-secondary text-white text-center py-5" style="position: relative; overflow: hidden;color:secondary;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; no-repeat center center; background-size: cover; filter: brightness(1.2);"></div>
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 255, 0.3); mix-blend-mode: overlay;"></div>
+  <div class="container" style="position: relative; z-index: 1;">
+  <br/><br/>
+  </div>
+</section>
+
+
+<div class='con'>  
+<div class='container-l'>
+  <div style="padding-left:100px">
+    <br/><br/>
+    <h3 class="card-title" style='color:#0056b3; '>Formations en presentiel</h3>       
+      <p class="card-text"> Suivez nos formations en ligne et obtenez des certificats. Accédez à des stages exclusifs qui vous offriront une expérience précieuse.</p>         
+  </div>
+  <div class=" py-2" style='padding-left:200px'>
+    <img src="assets/Ima_for_pre.png" alt="1" class="card-img-top rounded-circle" style=" left :50% ; width:50%; height: auto; object-fit: cover; aspect-ratio: 1/1;">
+  </div>
+
+
+<div style='padding:40px'>
+<div  *ngFor='let domaine of Audits'>
+      <h5 class="card-title">{{domaine.title}}</h5>
+      <p class="card-text">Niveau : Bac et Plus</p>
+      <p class="card-text">Durée :1 mois</p>
+      <p class="card-text">Lieu : FIDALLI</p>
+      <button routerLink="/formation/inscrit/" class="btn btn-primary">s'inscrire</button>
+      <br/><br/><br/><br/>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Capacitations Présentielles -->
+
+</body>
+
+
