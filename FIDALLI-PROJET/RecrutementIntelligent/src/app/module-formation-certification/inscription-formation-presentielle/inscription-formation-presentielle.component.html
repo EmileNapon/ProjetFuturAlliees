@@ -1,74 +1,113 @@
 
 <body>
-<nav class="navbar-light navbar-fixed-top bg-light  py-4">
+  <nav class="navbar-light navbar-fixed-top bg-light  py-4">
 
-  <ul class="nav">
+    <ul class="nav">
+        <li class="nav-item">
+            <img src="assets/icon.png" alt="FuturAlliés Logo" routerLink='/acceuil' class="logo" height="50">
+         </li>
       <li class="nav-item">
-          <img src="assets/icon.png" alt="FuturAlliés Logo" routerLink='/acceuil' class="logo" height="50">
-       </li>
-    <li class="nav-item">
-      <a routerLink='/formation/acceuilFormation' class="nav-link" >Domaine</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink='formation/FormationPresentielle' class="nav-link" >Formation en presentiel</a>
-    </li>
-
-
-    <li class="nav-item">
-      <a routerLink='/formation/certification' class="nav-link" >Certifications</a>
-    </li>
-
-
-    <li class="nav-item">
-      <a href="#trainers" class="nav-link" >A propos de nos centres</a>
-    </li>
- 
-
-    <li class="nav-item">
-      <a href="#trainers" class="nav-link" >Equipes</a>
-    </li>
-
-    <li class="nav-item" style="padding-left: 30px;">
-      <a routerLink="/usersPages/login" class="btn btn-warning" >Se connecter</a>
-    </li>
-  </ul>
-</nav>
-
-
-
-<section class="banner bg-secondary text-white text-center py-5" style="position: relative; overflow: hidden;color:secondary;">
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; no-repeat center center; background-size: cover; filter: brightness(1.2);"></div>
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 255, 0.3); mix-blend-mode: overlay;"></div>
-  <div class="container" style="position: relative; z-index: 1;">
-  <br/><br/>
-  </div>
-</section>
-
-
-<div class='con'>  
-<div class='container-l'>
-  <div style="padding-left:100px">
+        <a routerLink='/formation/acceuilFormation' class="nav-link" >Domaine</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink='formation/FormationPresentielle' class="nav-link" >Formation en presentiel</a>
+      </li>
+  
+  
+      <li class="nav-item">
+        <a routerLink='/formation/certification' class="nav-link" >Certifications</a>
+      </li>
+  
+  
+      <li class="nav-item">
+        <a href="#trainers" class="nav-link" >A propos de nos centres</a>
+      </li>
+   
+  
+      <li class="nav-item">
+        <a href="#trainers" class="nav-link" >Equipes</a>
+      </li>
+  
+      <li class="nav-item" style="padding-left: 30px;">
+        <a routerLink="/usersPages/login" class="btn btn-warning" >Se connecter</a>
+      </li>
+    </ul>
+  </nav>
+  
+  
+  
+  <section class="banner bg-secondary text-white text-center py-5" style="position: relative; overflow: hidden;color:secondary;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; no-repeat: center; background-size: cover; filter: brightness(1.2);"></div>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 255, 0.3); mix-blend-mode: overlay;"></div>
+    <div class="container" style="position: relative; z-index: 1;">
     <br/><br/>
-    <h3 class="card-title" style='color:#0056b3; '>Formations en presentiel</h3>       
-      <p class="card-text"> Suivez nos formations en ligne et obtenez des certificats. Accédez à des stages exclusifs qui vous offriront une expérience précieuse.</p>         
-  </div>
-  <div class=" py-2" style='padding-left:200px'>
-    <img src="assets/Ima_for_pre.png" alt="1" class="card-img-top rounded-circle" style=" left :50% ; width:50%; height: auto; object-fit: cover; aspect-ratio: 1/1;">
-  </div>
+    </div>
+  </section>
+  
+  
 
 
-<div style='padding:40px'>
-<div  *ngFor='let cour of cours_presentiel'>
-      <h5 class="card-title">{{cour.nom}}</h5>
-      <p class="card-text">Niveau : Bac et Plus</p>
-      <p class="card-text">Durée :1 mois</p>
-      <p class="card-text">Lieu : FIDALLI</p>
-      <button (click)="onSelectDomaine(cour.id)" class="btn btn-primary">s'inscrire</button>
-      <br/><br/><br/><br/>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class='con'>  
+    <div class='container-l '> 
+    
+  
+
+<button class='taille'>
+  <div class="dispose" *ngFor='let domaine of Audits'>
+    <div class='disp1'>
+          <button class='btn btn-outline-danger' style='font-size:80%; background-color:white; color:black'>Formation presentiel</button><br/><br/>
+          <h4 class="card-title" style='font-size:100%;'>{{domaine.title}}</h4>  
+          <p class="card-title" >{{ domaine.domaine }}: {{ domaine.niveau }}</p>
+          <p class="card-title" > {{ domaine.cout }} </p>
+    </div>
+    <div class='disp2'>
+        <p class="card-title" >{{ domaine.lieu }}</p>
+        <p class="card-title" >{{ domaine.dateDebut }}</p>
+        <p class="card-title" >{{ domaine.heure }}</p>
+    </div>
+    <div class='disp3' >
+      <button  href="#" class="btn btn-outline-secondary">Details</button>  
+    </div>      
+ 
 </div>
-</div>
-</div>
+<br/><br/>
+</button>
 
 
 
@@ -80,10 +119,69 @@
 
 
 
+
+
+
+
+
+
+
+  
+  
+  <div style='padding:40px'>
+  
+  
+  <div class="setting-card" *ngFor='let domaine of Audits'>
+    <button class="row">
+      <div class="d-flex row">
+        <h1 class="card-title mb-3" style='color:#0056b3;'><strong>{{domaine.title}}</strong></h1>
+      </div>
+      <br/>
+      <div class="col-md-6">
+        <strong>Domaine :</strong> {{ domaine.domaine }} <br/>
+        <p>Niveau réquis :</p> {{ domaine.niveau }} <br/>
+        <p>Durée :</p> {{ domaine.dure }} <br/>
+        <p>Date de début :</p> {{ domaine.dateDebut }} <br/>
+        <p>Lieu :</p> {{ domaine.lieu }} <br/>
+        <p>Coût :</p> <span  class="text-danger">{{ domaine.cout }} </span> <br/>
+
+      </div>
+      <div class="col-md-6">
+        <h5><strong></strong></h5>
+        <ol class="list-group-numbered">
+          <li class="list-group-item" >
+            <strong> </strong>
+          </li>
+        </ol>
+        <div class="text-center mt-4">
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#moreContent" aria-expanded="false" aria-controls="moreContent">
+            Voir plus
+          </button>
+        </div>
+      </div>
+    </button><br>
+    <div class="row">
+      <p><strong>Formateur:</strong> Marie Dupont, Expert-comptable diplômée, avec 10 ans d'expérience dans la gestion comptable et la formation professionnelle.<a class="btn">Voir profil complet</a></p>
+    </div>
+    <div class="row">
+      <p> <strong>Bénéfices de la formation: </strong> Attestation de formation requise.</p>
+    </div>
+    <div class="row">
+      <button routerLink="/formation/inscrit/" class="btn btn-primary">S'inscrire</button>
+        <br/>
+    </div>
+    </div>
+  </div>
+  </div>
+  </div>
 
 
 <!-- Capacitations Présentielles -->
-
+<section class="capacitation-options">
+  <!-- Pagination -->
+  <div class="pagination">
+      <a href="#prev">&laquo; Précédent</a>
+      <a href="#next">Suivant &raquo;</a>
+  </div>
+</section>
 </body>
-
-

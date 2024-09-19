@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { DomaineService } from '../acceuil-formation/acceuil-formation-services/acceuil-formations-services';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription-formation-presentielle',
@@ -9,23 +7,22 @@ import { Router } from '@angular/router';
 })
 export class InscriptionFormationPresentielleComponent {
 
-  cours_presentiel: any[] = [];
+  Audits=[
+    {
+      "id":1,
+      "title":"Comptabilité générale : bases et techniques avancées ",
+      "domaine": "Comptabilité",
+      "niveau": "BAC + 3 ",
+      "dure": "1 mois",
+      "dateDebut": "01 Octobre 2024",
+      "heure":" 09:00 - 17:00",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "9500 fcfa",
+      "description":"vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
+      "formateur": "KABORE Estelle",
+      "resumeFormateur":"Expert-comptable diplômée, avec 10 ans d'expérience dans la gestion comptable et la formation professionnelle."
 
-  constructor(private domaineService: DomaineService, private router: Router) { }
-  
-  ngOnInit(): void {
-    this.loadDomaines();
-  }
-  
-  loadDomaines(): void {
-    this.domaineService.getCours_presentiel().subscribe(data => {
-      this.cours_presentiel = data;
-    });
-  }
-  
-  onSelectDomaine(idcoursPresentiel: string): void {
-    this.router.navigate([`/FormationPresentielle/${idcoursPresentiel}/coursPresentiel`]); // Redirection vers la page des matières du domaine sélectionné
-  };
+      }];
 
 
-}
+      }  
